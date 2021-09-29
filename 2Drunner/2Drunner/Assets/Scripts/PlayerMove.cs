@@ -15,10 +15,10 @@ public class PlayerMove : MonoBehaviour
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
 
-        if (Input.GetAxis("Horizontal") > 0)
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        if (Input.GetAxis("Horizontal") > 0 && this.gameObject.transform.position.x < 2.65)
+            transform.Translate(Vector2.right * 2 * speed * Time.deltaTime);
 
-        if (Input.GetAxis("Horizontal") < 0)
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        if (Input.GetAxis("Horizontal") < 0 && this.gameObject.transform.position.x > -2.65)
+            transform.Translate(Vector2.left * 2 * speed * Time.deltaTime);
     }
 }

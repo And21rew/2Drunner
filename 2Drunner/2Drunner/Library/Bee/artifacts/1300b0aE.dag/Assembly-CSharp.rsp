@@ -342,7 +342,11 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/CameraToPlayer.cs"
+"Assets/Scripts/DestroyEnemy1.cs"
+"Assets/Scripts/PlayerHealth.cs"
 "Assets/Scripts/PlayerMove.cs"
+"Assets/Scripts/RandomEnemy1.cs"
+"Assets/Scripts/Score.cs"
 -langversion:8.0
 
 /deterministic
