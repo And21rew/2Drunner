@@ -10,13 +10,7 @@ public class RandomEnemy1 : MonoBehaviour
     [SerializeField] private float spawnRate = 2f;
     float nextSpawn = 0.0f;
     [SerializeField] private Transform player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time > nextSpawn)
