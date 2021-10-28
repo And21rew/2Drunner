@@ -5,9 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int health = 1;
+    private int health;
     [SerializeField] private GameObject[] notActiveObjects;
     [SerializeField] private GameObject gameoverScreen;
+
+    void Start()
+    {
+        health = PlayerPrefs.GetInt("health");
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

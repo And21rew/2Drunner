@@ -15,5 +15,23 @@ public class FirstStart : MonoBehaviour
         {
             PlayerPrefs.SetInt("score", 0);
         }
+
+        if (!PlayerPrefs.HasKey("health"))
+        {
+            PlayerPrefs.SetInt("health", 1);
+        }
+
+        if (!PlayerPrefs.HasKey("maxbonus"))
+        {
+            PlayerPrefs.SetInt("maxbonus", 3);
+        }
+
+        for (int i = 0; i <= 5; i++) 
+        {
+            if (!PlayerPrefs.HasKey("item" + i.ToString()))
+            {
+                PlayerPrefs.SetInt("item" + i.ToString(), 0);
+            }
+        }
     }
 }
