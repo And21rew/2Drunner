@@ -26,6 +26,11 @@ public class FirstStart : MonoBehaviour
             PlayerPrefs.SetInt("maxbonus", 3);
         }
 
+        if (!PlayerPrefs.HasKey("skin"))
+        {
+            PlayerPrefs.SetInt("skin", 0);
+        }
+
         for (int i = 0; i <= 5; i++) 
         {
             if (!PlayerPrefs.HasKey("item" + i.ToString()))

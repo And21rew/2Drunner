@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector2.up);
     }
 
     void FixedUpdate()
