@@ -9,11 +9,7 @@ public class CameraToPlayer : MonoBehaviour
 
     void Start()
     {
-        //if (PlayerPrefs.GetInt("skin") == 0)
-            transform.position = new Vector3(transform.position.x, target[PlayerPrefs.GetInt("skin")].transform.position.y + 2, transform.position.z);
-
-        //if (PlayerPrefs.GetInt("skin") == 1)
-            //transform.position = new Vector3(transform.position.x, target[PlayerPrefs.GetInt("skin")].transform.position.y + 2, transform.position.z);
+        transform.position = new Vector3(transform.position.x, target[PlayerPrefs.GetInt("skin")].transform.position.y + 2, transform.position.z);
     }
 
     void Update()

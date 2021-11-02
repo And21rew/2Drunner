@@ -5,17 +5,13 @@ using UnityEngine;
 public class SkinInGame : MonoBehaviour
 {
     [SerializeField] private GameObject[] players;
-    
+    [SerializeField] private GameObject[] leftButton;
+    [SerializeField] private GameObject[] rightButton;
+
     void Start()
     {
-        if (PlayerPrefs.GetInt("skin") == 0)
-        {
-            players[0].SetActive(true);
-        }
-
-        if (PlayerPrefs.GetInt("skin") == 1)
-        {
-            players[1].SetActive(true);
-        }
+        players[PlayerPrefs.GetInt("skin")].SetActive(true);
+        leftButton[PlayerPrefs.GetInt("skin")].SetActive(true);
+        rightButton[PlayerPrefs.GetInt("skin")].SetActive(true);
     }
 }

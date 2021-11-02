@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
     [SerializeField] private Text score;
     [SerializeField] private Text finalScore;
     [SerializeField] private Text coin;
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform[] player;
     private int scores;
 
     void Start()
@@ -19,9 +19,9 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        if (player.transform.position.y > 0)
+        if (player[PlayerPrefs.GetInt("skin")].transform.position.y > 0)
         {
-            scores = (int)player.transform.position.y;
+            scores = (int)player[PlayerPrefs.GetInt("skin")].transform.position.y;
             score.text = "Score: " + scores.ToString();
             finalScore.text = "You score: " + scores.ToString() + "\n" + "Retry?";
 
