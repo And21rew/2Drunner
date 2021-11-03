@@ -1604,6 +1604,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 519420040}
+        m_TargetAssemblyTypeName: TimeInGame, Assembly-CSharp
+        m_MethodName: SetGameTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &500490627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1828,7 @@ GameObject:
   - component: {fileID: 519420037}
   - component: {fileID: 519420038}
   - component: {fileID: 519420039}
+  - component: {fileID: 519420040}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1990,6 +2003,14 @@ MonoBehaviour:
   - {fileID: 657356797}
   - {fileID: 1269816867}
   - {fileID: 1146431589}
+  - {fileID: 313549260}
+  - {fileID: 2118593266}
+  - {fileID: 1012420054}
+  - {fileID: 1992142743}
+  - {fileID: 863364341}
+  - {fileID: 818550727}
+  - {fileID: 2077490243}
+  - {fileID: 1589541312}
 --- !u!114 &519420038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,6 +2060,18 @@ MonoBehaviour:
   - {fileID: 1992142743}
   - {fileID: 818550727}
   - {fileID: 1589541312}
+--- !u!114 &519420040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ddeeecfa6d2bda4f98465928634c177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &580827588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4802,6 +4835,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 5208acd103b77e44bb6e0d581916264a, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 519420040}
+        m_TargetAssemblyTypeName: TimeInGame, Assembly-CSharp
+        m_MethodName: SetGameTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
