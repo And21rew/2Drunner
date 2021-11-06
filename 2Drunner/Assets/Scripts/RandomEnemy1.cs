@@ -21,5 +21,18 @@ public class RandomEnemy1 : MonoBehaviour
             whereToSpawn = new Vector2(RandX, target[PlayerPrefs.GetInt("skin")].transform.position.y + 14);
             Instantiate(obj, whereToSpawn, Quaternion.identity);
         }
+
+        if ((int)target[PlayerPrefs.GetInt("skin")].transform.position.y % 50 == 0 && target[PlayerPrefs.GetInt("skin")].transform.position.y > 25)
+        {
+            if (spawnRate > 2f)
+            {
+                spawnRate -= 0.02f;
+            }
+            else
+            {
+                spawnRate = 2f;
+            }
+            Debug.Log("Enemy:" + spawnRate);
+        }
     }
 }

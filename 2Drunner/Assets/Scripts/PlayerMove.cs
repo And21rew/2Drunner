@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float speed = 2f;
+    [SerializeField] private Transform[] target;
     public Rigidbody2D rb;
 
     bool FacingRight = true;
@@ -19,6 +20,15 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         transform.Translate(speed * Time.deltaTime * Vector2.up);
+
+        if ((int)target[PlayerPrefs.GetInt("skin")].transform.position.y % 50 == 0 && target[PlayerPrefs.GetInt("skin")].transform.position.y > 25)
+        {
+            if (speed <= 7f)
+                speed += 0.021f;
+            else
+                speed = 7f;
+            Debug.Log("Speed:" + speed);
+        }
     }
 
     void FixedUpdate()

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Coin
+  - Item0
+  - Item1
+  - Item2
+  - portal
   layers:
   - Default
   - TransparentFX

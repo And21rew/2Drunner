@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     [SerializeField] private Text[] count;
+    [SerializeField] private Text[] countInMaterial;
+    [SerializeField] private Text[] countInSkin;
     private int maxBonus;
 
     void Start()
@@ -17,7 +19,13 @@ public class Shop : MonoBehaviour
     {
         for (int i = 0; i < count.Length; i++)
         {
-            count[i].text = PlayerPrefs.GetInt("item" + i.ToString(), PlayerPrefs.GetInt("item" + i.ToString())).ToString();
+            count[i].text = PlayerPrefs.GetInt("item" + i.ToString()).ToString();
+            countInMaterial[i].text = PlayerPrefs.GetInt("item" + i.ToString()).ToString(); ;
+        }
+
+        for (int i = 0; i < countInSkin.Length; i++)
+        {
+            countInSkin[i].text = PlayerPrefs.GetInt("item" + (i + 3).ToString()).ToString();
         }
     }
 

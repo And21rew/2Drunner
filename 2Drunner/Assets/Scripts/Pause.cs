@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] private GameObject [] btns;
+    [SerializeField] private GameObject btnPause;
+    [SerializeField] private GameObject[] leftButton;
+    [SerializeField] private GameObject[] rightButton;
 
     public void StartPause()
     {
         Time.timeScale = 0;
-        for (int i = 0; i < btns.Length; i++)
-        {
-            btns[i].SetActive(false);
-        }
+        btnPause.SetActive(false);
+        leftButton[PlayerPrefs.GetInt("skin")].SetActive(false);
+        rightButton[PlayerPrefs.GetInt("skin")].SetActive(false);
     }
 
     public void StopPause()
     {
         Time.timeScale = 1;
-        for (int i = 0; i < btns.Length; i++)
-        {
-            btns[i].SetActive(true);
-        }
+        btnPause.SetActive(true);
+        leftButton[PlayerPrefs.GetInt("skin")].SetActive(true);
+        rightButton[PlayerPrefs.GetInt("skin")].SetActive(true);
     }
 }

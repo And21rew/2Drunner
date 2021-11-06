@@ -8,8 +8,7 @@ public class SpawnCoin : MonoBehaviour
     float RandX;
     Vector2 whereToSpawn;
     [SerializeField] private float spawnRate = 12f;
-    float nextSpawn = 0.0f;
-    //[SerializeField] private Transform player;
+    float nextSpawn = 2.0f;
     [SerializeField] private Transform[] target;
 
     void Update()
@@ -20,6 +19,19 @@ public class SpawnCoin : MonoBehaviour
             RandX = Random.Range(-4f, 4f);
             whereToSpawn = new Vector2(RandX, target[PlayerPrefs.GetInt("skin")].transform.position.y + 14);
             Instantiate(obj, whereToSpawn, Quaternion.identity);
+        }
+
+        if ((int)target[PlayerPrefs.GetInt("skin")].transform.position.y % 50 == 0 && target[PlayerPrefs.GetInt("skin")].transform.position.y > 25)
+        {
+            if (spawnRate > 5f)
+            {
+                spawnRate -= 0.04f;
+            }
+            else
+            {
+                spawnRate = 5f;
+            }
+            Debug.Log("Coin:" + spawnRate);
         }
     }
 }
