@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     private int health;
+    private int numberOfLocation;
     [SerializeField] private GameObject[] notActiveObjects;
     [SerializeField] private GameObject gameoverScreen;
     [SerializeField] private GameObject change;
@@ -15,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = PlayerPrefs.GetInt("health");
+        numberOfLocation = 1;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,7 +24,6 @@ public class PlayerHealth : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             health--;
-
             if (health <= 0)
             {
                 Time.timeScale = 0;
@@ -70,23 +71,65 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator ChangeLoc()
     {
+        int randomBack = 0;
         change.SetActive(true);
-        int randomBack = Random.Range(1, 10);
-        yield return new WaitForSeconds(1f);
-        if (randomBack < 4)
+        if (numberOfLocation == 1)
         {
-            background.GetComponent<SpriteRenderer>().sprite = back1;
+            randomBack = Random.Range(1, 11);
+            yield return new WaitForSeconds(1f);
+            if (randomBack <= 5)
+            {
+                background.GetComponent<SpriteRenderer>().sprite = back2;
+                numberOfLocation = 2;
+            }
+            else
+            {
+                background.GetComponent<SpriteRenderer>().sprite = back3;
+                numberOfLocation = 3;
+            }
+            yield return new WaitForSeconds(1f);
+            randomBack = 0;
+            change.SetActive(false);
         }
-        else if (randomBack >= 4 && randomBack < 7)
+        else if (numberOfLocation == 2)
         {
-            background.GetComponent<SpriteRenderer>().sprite = back2;
+            randomBack = Random.Range(1, 11);
+            yield return new WaitForSeconds(1f);
+            if (randomBack <= 5)
+            {
+                background.GetComponent<SpriteRenderer>().sprite = back1;
+                numberOfLocation = 1;
+            }
+            else
+            {
+                background.GetComponent<SpriteRenderer>().sprite = back3;
+                numberOfLocation = 3;
+            }
+            yield return new WaitForSeconds(1f);
+            randomBack = 0;
+            change.SetActive(false);
+        }
+        else if (numberOfLocation == 3)
+        {
+            randomBack = Random.Range(1, 11);
+            yield return new WaitForSeconds(1f);
+            if (randomBack <= 5)
+            {
+                background.GetComponent<SpriteRenderer>().sprite = back1;
+                numberOfLocation = 1;
+            }
+            else
+            {
+                background.GetComponent<SpriteRenderer>().sprite = back2;
+                numberOfLocation = 2;
+            }
+            yield return new WaitForSeconds(1f);
+            randomBack = 0;
+            change.SetActive(false);
         }
         else
         {
-            background.GetComponent<SpriteRenderer>().sprite = back3;
+            Debug.Log("Exception");
         }
-        yield return new WaitForSeconds(1f);
-        randomBack = 0;
-        change.SetActive(false);
     }
 }

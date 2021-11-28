@@ -57,10 +57,7 @@ public class FirstStart : MonoBehaviour
             }
         }
 
-        if (!PlayerPrefs.HasKey("LockDragon0"))
-        {
-            PlayerPrefs.SetInt("LockDragon0", 1);
-        }
+        PlayerPrefs.SetInt("LockDragon0", 1);
 
         if (!PlayerPrefs.HasKey("LockDragon1"))
         {
