@@ -8,6 +8,8 @@ public class ReloadLevel : MonoBehaviour
     public void LoadGame()
     {
         Time.timeScale = 1;
+        if (PlayerPrefs.GetInt("LearnMenu") == 0)
+            PlayerPrefs.SetInt("LearnMenu", 1);
         SceneManager.LoadScene(1);
     }
 

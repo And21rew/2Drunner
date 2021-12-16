@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         score.text = "Score: 0";
-        coin.text = "Coin: " + PlayerPrefs.GetInt("coin");
+        coin.text = PlayerPrefs.GetInt("coin").ToString();
     }
 
     void Update()
@@ -29,6 +29,6 @@ public class Score : MonoBehaviour
                 PlayerPrefs.SetInt("score", scores);
         }
 
-        coin.text = "Coin: " + PlayerPrefs.GetInt("coin");
+        coin.text = PlayerPrefs.GetInt("coin").ToString();
     }
 }

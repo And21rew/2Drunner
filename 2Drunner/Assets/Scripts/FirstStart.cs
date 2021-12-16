@@ -9,6 +9,16 @@ public class FirstStart : MonoBehaviour
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.SetInt("coin", 500000);
 
+        if (!PlayerPrefs.HasKey("LearnMenu"))
+        {
+            PlayerPrefs.SetInt("LearnMenu", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("LearnGame"))
+        {
+            PlayerPrefs.SetInt("LearnGame", 0);
+        }
+
         if (!PlayerPrefs.HasKey("coin"))
         {
             PlayerPrefs.SetInt("coin", 0);

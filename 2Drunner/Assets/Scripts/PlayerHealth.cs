@@ -10,8 +10,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject[] notActiveObjects;
     [SerializeField] private GameObject gameoverScreen;
     [SerializeField] private GameObject change;
-    [SerializeField] private GameObject background;
+    [SerializeField] private GameObject background1, background2, background3;
     [SerializeField] private Sprite back1, back2, back3;
+    private GameObject[] enemys;
 
     void Start()
     {
@@ -73,18 +74,29 @@ public class PlayerHealth : MonoBehaviour
     {
         int randomBack = 0;
         change.SetActive(true);
+        enemys = GameObject.FindGameObjectsWithTag("Enemy");
+
+        for (int i=0; i<enemys.Length; i++)
+        {
+            Destroy(enemys[i]);
+        }
+
         if (numberOfLocation == 1)
         {
             randomBack = Random.Range(1, 11);
             yield return new WaitForSeconds(1f);
             if (randomBack <= 5)
             {
-                background.GetComponent<SpriteRenderer>().sprite = back2;
+                background1.GetComponent<SpriteRenderer>().sprite = back2;
+                background2.GetComponent<SpriteRenderer>().sprite = back2;
+                background3.GetComponent<SpriteRenderer>().sprite = back2;
                 numberOfLocation = 2;
             }
             else
             {
-                background.GetComponent<SpriteRenderer>().sprite = back3;
+                background1.GetComponent<SpriteRenderer>().sprite = back3;
+                background2.GetComponent<SpriteRenderer>().sprite = back3;
+                background3.GetComponent<SpriteRenderer>().sprite = back3;
                 numberOfLocation = 3;
             }
             yield return new WaitForSeconds(1f);
@@ -97,12 +109,16 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(1f);
             if (randomBack <= 5)
             {
-                background.GetComponent<SpriteRenderer>().sprite = back1;
+                background1.GetComponent<SpriteRenderer>().sprite = back1;
+                background2.GetComponent<SpriteRenderer>().sprite = back1;
+                background3.GetComponent<SpriteRenderer>().sprite = back1;
                 numberOfLocation = 1;
             }
             else
             {
-                background.GetComponent<SpriteRenderer>().sprite = back3;
+                background1.GetComponent<SpriteRenderer>().sprite = back3;
+                background2.GetComponent<SpriteRenderer>().sprite = back3;
+                background3.GetComponent<SpriteRenderer>().sprite = back3;
                 numberOfLocation = 3;
             }
             yield return new WaitForSeconds(1f);
@@ -115,12 +131,16 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(1f);
             if (randomBack <= 5)
             {
-                background.GetComponent<SpriteRenderer>().sprite = back1;
+                background1.GetComponent<SpriteRenderer>().sprite = back1;
+                background2.GetComponent<SpriteRenderer>().sprite = back1;
+                background3.GetComponent<SpriteRenderer>().sprite = back1;
                 numberOfLocation = 1;
             }
             else
             {
-                background.GetComponent<SpriteRenderer>().sprite = back2;
+                background1.GetComponent<SpriteRenderer>().sprite = back2;
+                background2.GetComponent<SpriteRenderer>().sprite = back2;
+                background3.GetComponent<SpriteRenderer>().sprite = back2;
                 numberOfLocation = 2;
             }
             yield return new WaitForSeconds(1f);

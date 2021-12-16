@@ -11,15 +11,15 @@ public class ShowBestScore : MonoBehaviour
 
     void Start()
     {
-        score.text = "You best score:" + "\n" + PlayerPrefs.GetInt("score").ToString();
-        coin.text = "You have:" + PlayerPrefs.GetInt("coin").ToString() + "coin";
+        score.text = "Best score:" + "\n" + PlayerPrefs.GetInt("score").ToString();
+        coin.text = PlayerPrefs.GetInt("coin").ToString();
         coinInShop.text = PlayerPrefs.GetInt("coin").ToString();
     }
 
     void Update()
     {
-        score.text = "You best score:" + "\n" + PlayerPrefs.GetInt("score").ToString();
-        coin.text = "You have:" + "\n" + PlayerPrefs.GetInt("coin").ToString() + " coin";
+        score.text = "Best score:" + "\n" + PlayerPrefs.GetInt("score").ToString();
+        coin.text = PlayerPrefs.GetInt("coin").ToString();
         coinInShop.text = PlayerPrefs.GetInt("coin").ToString();
     }
 }

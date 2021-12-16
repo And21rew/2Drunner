@@ -66,7 +66,7 @@ public class LuckyDragon : MonoBehaviour
             else
             {
                 PlayerPrefs.SetInt("item0", PlayerPrefs.GetInt("item0") + 2);
-                winText.text = "You have 2 not cleaned item0!";
+                winText.text = "You have 2 not cleaned First Stones!";
             }
         }
         else
@@ -92,12 +92,12 @@ public class LuckyDragon : MonoBehaviour
             else if (idDrop > 50 && idDrop <= 100)
             {
                 PlayerPrefs.SetInt("item0", PlayerPrefs.GetInt("item0") + 3);
-                winText.text = "You have 3 not cleaned item0!";
+                winText.text = "You have 3 not cleaned First Stones!";
             }
             else if (idDrop > 100 && idDrop <= 150)
             {
                 PlayerPrefs.SetInt("item1", PlayerPrefs.GetInt("item1") + 2);
-                winText.text = "You have 2 not cleaned item1!";
+                winText.text = "You have 2 not cleaned Second Stones!";
             }
             else
             {
@@ -106,17 +106,17 @@ public class LuckyDragon : MonoBehaviour
                 if (idDragon <= 50)
                 {
                     PlayerPrefs.SetInt("LockDragon1", 1);
-                    winText.text = "You have skin1!";
+                    winText.text = "You have skin Rhino!";
                 }
                 else if (idDragon > 50 && idDragon <= 90)
                 {
                     PlayerPrefs.SetInt("LockDragon2", 1);
-                    winText.text = "You have skin2!";
+                    winText.text = "You have skin Skeleton!";
                 }
                 else
                 {
                     PlayerPrefs.SetInt("LockDragon3", 1);
-                    winText.text = "You have skin3!";
+                    winText.text = "You have skin Dessert!";
                 }
             }
         }
@@ -143,17 +143,17 @@ public class LuckyDragon : MonoBehaviour
             else if (idDrop > 50 && idDrop <= 100)
             {
                 PlayerPrefs.SetInt("item0", PlayerPrefs.GetInt("item0") + 4);
-                winText.text = "You have 4 not cleaned item0!";
+                winText.text = "You have 4 not cleaned First Stones!";
             }
             else if (idDrop > 100 && idDrop <= 150)
             {
                 PlayerPrefs.SetInt("item1", PlayerPrefs.GetInt("item1") + 3);
-                winText.text = "You have 3 not cleaned item1!";
+                winText.text = "You have 3 not cleaned Second Stones!";
             }
             else if (idDrop > 150 && idDrop <= 200)
             {
                 PlayerPrefs.SetInt("item2", PlayerPrefs.GetInt("item2") + 2);
-                winText.text = "You have 2 not cleaned item2!";
+                winText.text = "You have 2 not cleaned Third Stones!";
             }
             else
             {
@@ -162,22 +162,22 @@ public class LuckyDragon : MonoBehaviour
                 if (idDragon <= 100)
                 {
                     PlayerPrefs.SetInt("LockDragon1", 1);
-                    winText.text = "You have skin1!";
+                    winText.text = "You have skin Rhino!";
                 }
                 else if (idDragon > 100 && idDragon <= 150)
                 {
                     PlayerPrefs.SetInt("LockDragon2", 1);
-                    winText.text = "You have skin2!";
+                    winText.text = "You have skin Skeleton!";
                 }
                 else if (idDragon > 150 && idDragon <= 190)
                 {
                     PlayerPrefs.SetInt("LockDragon3", 1);
-                    winText.text = "You have skin3!";
+                    winText.text = "You have skin Dessert!";
                 }
                 else
                 {
                     PlayerPrefs.SetInt("LockDragon4", 1);
-                    winText.text = "You have skin4!";
+                    winText.text = "You have skin Lava!";
                 }
             }
         }
