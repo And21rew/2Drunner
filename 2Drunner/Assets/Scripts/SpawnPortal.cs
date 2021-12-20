@@ -10,14 +10,43 @@ public class SpawnPortal : MonoBehaviour
     [SerializeField] private float spawnRate = 30f;
     float nextSpawn = 30.0f;
     [SerializeField] private Transform[] target;
+    bool check;
+    public Collider2D[] colliders;
 
     void Update()
     {
         if (Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            whereToSpawn = new Vector2(RandX, target[PlayerPrefs.GetInt("skin")].transform.position.y + 14);
+            StartPosition();
+        }
+    }
+
+    public void StartPosition()
+    {
+        whereToSpawn = new Vector2(RandX, target[PlayerPrefs.GetInt("skin")].transform.position.y + 14);
+
+        check = CheckSpawnPoint(whereToSpawn);
+        if (check)
+        {
             Instantiate(portal, whereToSpawn, Quaternion.identity);
+        }
+        else
+        {
+            //StartPosition();
+        }
+    }
+
+    bool CheckSpawnPoint(Vector2 spawnposition)
+    {
+        colliders = Physics2D.OverlapCircleAll(spawnposition, 1f);
+        if (colliders.Length > 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }

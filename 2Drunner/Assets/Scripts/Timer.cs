@@ -31,17 +31,17 @@ public class Timer : MonoBehaviour
         {
             PlayerPrefs.SetInt("canClean0", 0);
             cleaner0.sprite = cleaner;
-            if (PlayerPrefs.GetFloat("TimeClean0") == 10)
+            if (PlayerPrefs.GetFloat("TimeClean0") == 900)
             {
                 PlayerPrefs.SetInt("item3", PlayerPrefs.GetInt("item3") + 1);
                 PlayerPrefs.SetFloat("TimeClean0", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean0") == 20)
+            else if (PlayerPrefs.GetFloat("TimeClean0") == 3600)
             {
                 PlayerPrefs.SetInt("item4", PlayerPrefs.GetInt("item4") + 1);
                 PlayerPrefs.SetFloat("TimeClean0", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean0") == 30)
+            else if (PlayerPrefs.GetFloat("TimeClean0") == 18000)
             {
                 PlayerPrefs.SetInt("item5", PlayerPrefs.GetInt("item5") + 1);
                 PlayerPrefs.SetFloat("TimeClean0", 0);
@@ -49,6 +49,18 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            if (PlayerPrefs.GetFloat("TimeClean0") == 900)
+            {
+                cleaner0.sprite = item0;
+            }
+            else if (PlayerPrefs.GetFloat("TimeClean0") == 3600)
+            {
+                cleaner0.sprite = item1;
+            }
+            else if (PlayerPrefs.GetFloat("TimeClean0") == 18000)
+            {
+                cleaner0.sprite = item2;
+            }
             StartCoroutine(StartTimer(tm));
         }
 
@@ -56,17 +68,17 @@ public class Timer : MonoBehaviour
         {
             PlayerPrefs.SetInt("canClean1", 0);
             cleaner1.sprite = cleaner;
-            if (PlayerPrefs.GetFloat("TimeClean1") == 10)
+            if (PlayerPrefs.GetFloat("TimeClean1") == 900)
             {
                 PlayerPrefs.SetInt("item3", PlayerPrefs.GetInt("item3") + 1);
                 PlayerPrefs.SetFloat("TimeClean1", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean1") == 20)
+            else if (PlayerPrefs.GetFloat("TimeClean1") == 3600)
             {
                 PlayerPrefs.SetInt("item4", PlayerPrefs.GetInt("item4") + 1);
                 PlayerPrefs.SetFloat("TimeClean1", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean1") == 30)
+            else if (PlayerPrefs.GetFloat("TimeClean1") == 18000)
             {
                 PlayerPrefs.SetInt("item5", PlayerPrefs.GetInt("item5") + 1);
                 PlayerPrefs.SetFloat("TimeClean1", 0);
@@ -74,6 +86,18 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            if (PlayerPrefs.GetFloat("TimeClean1") == 900)
+            {
+                cleaner1.sprite = item0;
+            }
+            else if (PlayerPrefs.GetFloat("TimeClean1") == 3600)
+            {
+                cleaner1.sprite = item1;
+            }
+            else if (PlayerPrefs.GetFloat("TimeClean1") == 18000)
+            {
+                cleaner1.sprite = item2;
+            }
             StartCoroutine(StartTimer1(tmm));
         }
 
@@ -99,6 +123,18 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            if (PlayerPrefs.GetFloat("TimeClean2") == 900)
+            {
+                cleaner2.sprite = item0;
+            }
+            else if (PlayerPrefs.GetFloat("TimeClean2") == 3600)
+            {
+                cleaner2.sprite = item1;
+            }
+            else if (PlayerPrefs.GetFloat("TimeClean2") == 18000)
+            {
+                cleaner2.sprite = item2;
+            }
             StartCoroutine(StartTimer2(tmmm));
         }
     }
@@ -125,17 +161,17 @@ public class Timer : MonoBehaviour
             timeLeft = 0;
             cleaner0.sprite = cleaner;
             PlayerPrefs.SetInt("canClean0", 0);
-            if (PlayerPrefs.GetFloat("TimeClean0") == 10)
+            if (PlayerPrefs.GetFloat("TimeClean0") == 900)
             {
                 PlayerPrefs.SetInt("item3", PlayerPrefs.GetInt("item3") + 1);
                 PlayerPrefs.SetFloat("TimeClean0", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean0") == 20)
+            else if (PlayerPrefs.GetFloat("TimeClean0") == 3600)
             {
                 PlayerPrefs.SetInt("item4", PlayerPrefs.GetInt("item4") + 1);
                 PlayerPrefs.SetFloat("TimeClean0", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean0") == 30)
+            else if (PlayerPrefs.GetFloat("TimeClean0") == 18000)
             {
                 PlayerPrefs.SetInt("item5", PlayerPrefs.GetInt("item5") + 1);
                 PlayerPrefs.SetFloat("TimeClean0", 0);
@@ -298,17 +334,17 @@ public class Timer : MonoBehaviour
             timeLeft1 = 0;
             cleaner1.sprite = cleaner;
             PlayerPrefs.SetInt("canClean1", 0);
-            if (PlayerPrefs.GetFloat("TimeClean1") == 10)
+            if (PlayerPrefs.GetFloat("TimeClean1") == 900)
             {
                 PlayerPrefs.SetInt("item3", PlayerPrefs.GetInt("item3") + 1);
                 PlayerPrefs.SetFloat("TimeClean1", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean1") == 20)
+            else if (PlayerPrefs.GetFloat("TimeClean1") == 3600)
             {
                 PlayerPrefs.SetInt("item4", PlayerPrefs.GetInt("item4") + 1);
                 PlayerPrefs.SetFloat("TimeClean1", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean1") == 30)
+            else if (PlayerPrefs.GetFloat("TimeClean1") == 18000)
             {
                 PlayerPrefs.SetInt("item5", PlayerPrefs.GetInt("item5") + 1);
                 PlayerPrefs.SetFloat("TimeClean1", 0);
@@ -340,17 +376,17 @@ public class Timer : MonoBehaviour
             timeLeft2 = 0;
             cleaner2.sprite = cleaner;
             PlayerPrefs.SetInt("canClean2", 0);
-            if (PlayerPrefs.GetFloat("TimeClean2") == 10)
+            if (PlayerPrefs.GetFloat("TimeClean2") == 900)
             {
                 PlayerPrefs.SetInt("item3", PlayerPrefs.GetInt("item3") + 1);
                 PlayerPrefs.SetFloat("TimeClean2", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean2") == 20)
+            else if (PlayerPrefs.GetFloat("TimeClean2") == 3600)
             {
                 PlayerPrefs.SetInt("item4", PlayerPrefs.GetInt("item4") + 1);
                 PlayerPrefs.SetFloat("TimeClean2", 0);
             }
-            else if (PlayerPrefs.GetFloat("TimeClean2") == 30)
+            else if (PlayerPrefs.GetFloat("TimeClean2") == 18000)
             {
                 PlayerPrefs.SetInt("item5", PlayerPrefs.GetInt("item5") + 1);
                 PlayerPrefs.SetFloat("TimeClean2", 0);

@@ -66,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("portal"))
         {
             Destroy(collision.gameObject);
+            change.SetActive(true);
             StartCoroutine(ChangeLoc());
         }
     }
@@ -73,7 +74,6 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator ChangeLoc()
     {
         int randomBack = 0;
-        change.SetActive(true);
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
         for (int i=0; i<enemys.Length; i++)
@@ -99,9 +99,9 @@ public class PlayerHealth : MonoBehaviour
                 background3.GetComponent<SpriteRenderer>().sprite = back3;
                 numberOfLocation = 3;
             }
-            yield return new WaitForSeconds(1f);
-            randomBack = 0;
-            change.SetActive(false);
+            //yield return new WaitForSeconds(1f);
+            //randomBack = 0;
+            //change.SetActive(false);
         }
         else if (numberOfLocation == 2)
         {
@@ -121,9 +121,9 @@ public class PlayerHealth : MonoBehaviour
                 background3.GetComponent<SpriteRenderer>().sprite = back3;
                 numberOfLocation = 3;
             }
-            yield return new WaitForSeconds(1f);
-            randomBack = 0;
-            change.SetActive(false);
+            //yield return new WaitForSeconds(1f);
+            //randomBack = 0;
+            //change.SetActive(false);
         }
         else if (numberOfLocation == 3)
         {
@@ -143,13 +143,16 @@ public class PlayerHealth : MonoBehaviour
                 background3.GetComponent<SpriteRenderer>().sprite = back2;
                 numberOfLocation = 2;
             }
-            yield return new WaitForSeconds(1f);
-            randomBack = 0;
-            change.SetActive(false);
+            //yield return new WaitForSeconds(1f);
+            //randomBack = 0;
+            //change.SetActive(false);
         }
         else
         {
             Debug.Log("Exception");
         }
+        yield return new WaitForSeconds(1f);
+        randomBack = 0;
+        change.SetActive(false);
     }
 }
