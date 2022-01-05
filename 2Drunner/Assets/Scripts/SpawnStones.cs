@@ -7,7 +7,7 @@ public class SpawnStones : MonoBehaviour
     [SerializeField] private GameObject obj0, obj1, obj2;
     float RandX;
     Vector2 whereToSpawn;
-    [SerializeField] private float spawnRate = 20f;
+    [SerializeField] private float spawnRate;
     float nextSpawn = 5.0f;
     [SerializeField] private Transform[] target;
     private int idStone = 0;
@@ -24,15 +24,14 @@ public class SpawnStones : MonoBehaviour
 
         if ((int)target[PlayerPrefs.GetInt("skin")].transform.position.y % 50 == 0 && target[PlayerPrefs.GetInt("skin")].transform.position.y > 25)
         {
-            if (spawnRate > 10f)
+            if (spawnRate > 8f)
             {
-                spawnRate -= 0.04f;
+                spawnRate -= 0.045f;
             }
             else
             {
-                spawnRate = 10f;
+                spawnRate = 8f;
             }
-            Debug.Log("Stone:" + spawnRate);
         }
     }
 
@@ -66,7 +65,7 @@ public class SpawnStones : MonoBehaviour
 
     bool CheckSpawnPoint(Vector2 spawnposition)
     {
-        colliders = Physics2D.OverlapCircleAll(spawnposition, 1.5f);
+        colliders = Physics2D.OverlapCircleAll(spawnposition, 1.2f);
         if (colliders.Length > 0)
         {
             return false;

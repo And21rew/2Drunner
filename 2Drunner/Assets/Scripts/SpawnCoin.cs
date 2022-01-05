@@ -7,7 +7,7 @@ public class SpawnCoin : MonoBehaviour
     [SerializeField] private GameObject obj;
     float RandX;
     Vector2 whereToSpawn;
-    [SerializeField] private float spawnRate = 12f;
+    [SerializeField] private float spawnRate;
     float nextSpawn = 2.0f;
     [SerializeField] private Transform[] target;
     bool check;
@@ -23,15 +23,14 @@ public class SpawnCoin : MonoBehaviour
 
         if ((int)target[PlayerPrefs.GetInt("skin")].transform.position.y % 50 == 0 && target[PlayerPrefs.GetInt("skin")].transform.position.y > 25)
         {
-            if (spawnRate > 5f)
+            if (spawnRate > 4f)
             {
-                spawnRate -= 0.04f;
+                spawnRate -= 0.045f;
             }
             else
             {
-                spawnRate = 5f;
+                spawnRate = 4f;
             }
-            Debug.Log("Coin:" + spawnRate);
         }
     }
 
@@ -53,7 +52,7 @@ public class SpawnCoin : MonoBehaviour
 
     bool CheckSpawnPoint(Vector2 spawnposition)
     {
-        colliders = Physics2D.OverlapCircleAll(spawnposition, 1.5f);
+        colliders = Physics2D.OverlapCircleAll(spawnposition, 1.2f);
         if (colliders.Length > 0)
         {
             return false;

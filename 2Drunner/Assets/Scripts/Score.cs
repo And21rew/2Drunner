@@ -23,7 +23,7 @@ public class Score : MonoBehaviour
         {
             scores = (int)player[PlayerPrefs.GetInt("skin")].transform.position.y;
             score.text = "Score: " + scores.ToString();
-            finalScore.text = "You score: " + scores.ToString() + "\n" + "Retry?";
+            finalScore.text = "Your score: " + scores.ToString() + "\n" + "Retry?";
 
             if (scores > PlayerPrefs.GetInt("score"))
                 PlayerPrefs.SetInt("score", scores);

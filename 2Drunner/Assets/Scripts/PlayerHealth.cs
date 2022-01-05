@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Sprite back1, back2, back3;
     private GameObject[] enemys;
 
+    public AdsCore adsCore;
+
     void Start()
     {
         health = PlayerPrefs.GetInt("health");
@@ -33,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
                 {
                     notActiveObjects[i].SetActive(false);
                 }
+                adsCore.GetComponent<AdsCore>().ShowAd();
             }
         }
     }
@@ -66,14 +69,14 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("portal"))
         {
             Destroy(collision.gameObject);
-            change.SetActive(true);
             StartCoroutine(ChangeLoc());
         }
     }
 
     IEnumerator ChangeLoc()
     {
-        int randomBack = 0;
+        change.SetActive(true);
+        int randomBack = Random.Range(1, 11);
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
         for (int i=0; i<enemys.Length; i++)
@@ -83,7 +86,6 @@ public class PlayerHealth : MonoBehaviour
 
         if (numberOfLocation == 1)
         {
-            randomBack = Random.Range(1, 11);
             yield return new WaitForSeconds(1f);
             if (randomBack <= 5)
             {
@@ -99,13 +101,9 @@ public class PlayerHealth : MonoBehaviour
                 background3.GetComponent<SpriteRenderer>().sprite = back3;
                 numberOfLocation = 3;
             }
-            //yield return new WaitForSeconds(1f);
-            //randomBack = 0;
-            //change.SetActive(false);
         }
         else if (numberOfLocation == 2)
         {
-            randomBack = Random.Range(1, 11);
             yield return new WaitForSeconds(1f);
             if (randomBack <= 5)
             {
@@ -121,13 +119,9 @@ public class PlayerHealth : MonoBehaviour
                 background3.GetComponent<SpriteRenderer>().sprite = back3;
                 numberOfLocation = 3;
             }
-            //yield return new WaitForSeconds(1f);
-            //randomBack = 0;
-            //change.SetActive(false);
         }
         else if (numberOfLocation == 3)
         {
-            randomBack = Random.Range(1, 11);
             yield return new WaitForSeconds(1f);
             if (randomBack <= 5)
             {
@@ -143,9 +137,6 @@ public class PlayerHealth : MonoBehaviour
                 background3.GetComponent<SpriteRenderer>().sprite = back2;
                 numberOfLocation = 2;
             }
-            //yield return new WaitForSeconds(1f);
-            //randomBack = 0;
-            //change.SetActive(false);
         }
         else
         {

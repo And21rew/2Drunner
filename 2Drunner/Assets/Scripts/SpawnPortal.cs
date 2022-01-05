@@ -39,7 +39,7 @@ public class SpawnPortal : MonoBehaviour
 
     bool CheckSpawnPoint(Vector2 spawnposition)
     {
-        colliders = Physics2D.OverlapCircleAll(spawnposition, 1f);
+        colliders = Physics2D.OverlapCircleAll(spawnposition, 2f);
         if (colliders.Length > 0)
         {
             return false;

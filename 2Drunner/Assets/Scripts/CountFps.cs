@@ -6,6 +6,7 @@ public class CountFps : MonoBehaviour
 {
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
         Application.targetFrameRate = 60;
     }
 }

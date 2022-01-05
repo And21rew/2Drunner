@@ -6,8 +6,10 @@ public class FirstStart : MonoBehaviour
 {
     void Start()
     {
-        //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.SetInt("coin", 500000);
+        if (!PlayerPrefs.HasKey("CheckGame"))
+        {
+            PlayerPrefs.SetInt("CheckGame", 0);
+        }
 
         if (!PlayerPrefs.HasKey("LearnMenu"))
         {

@@ -19,10 +19,6 @@ public class LearnGame : MonoBehaviour
             learnGame.SetActive(true);
             Time.timeScale = 0;
         }
-        else
-        {
-            Debug.Log("exception");
-        }
     }
 
     public void StartGame()

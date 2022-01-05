@@ -11,6 +11,7 @@ public class ReloadLevel : MonoBehaviour
         if (PlayerPrefs.GetInt("LearnMenu") == 0)
             PlayerPrefs.SetInt("LearnMenu", 1);
         SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt("CheckGame", 1);
     }
 
     public void LoadMenu()

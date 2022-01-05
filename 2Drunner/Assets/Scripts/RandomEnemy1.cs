@@ -7,9 +7,8 @@ public class RandomEnemy1 : MonoBehaviour
     [SerializeField] private GameObject obj;
     float RandX;
     Vector2 whereToSpawn;
-    [SerializeField] private float spawnRate = 5f;
+    [SerializeField] private float spawnRate;
     float nextSpawn = 0.0f;
-    //[SerializeField] private Transform player;
     [SerializeField] private Transform[] target;
     bool check;
     public Collider2D[] colliders;
@@ -24,15 +23,14 @@ public class RandomEnemy1 : MonoBehaviour
 
         if ((int)target[PlayerPrefs.GetInt("skin")].transform.position.y % 50 == 0 && target[PlayerPrefs.GetInt("skin")].transform.position.y > 25)
         {
-            if (spawnRate > 2f)
+            if (spawnRate > 1f)
             {
                 spawnRate -= 0.02f;
             }
             else
             {
-                spawnRate = 2f;
+                spawnRate = 1f;
             }
-            Debug.Log("Enemy:" + spawnRate);
         }
     }
 
@@ -54,7 +52,7 @@ public class RandomEnemy1 : MonoBehaviour
 
     bool CheckSpawnPoint(Vector2 spawnposition)
     {
-        colliders = Physics2D.OverlapCircleAll(spawnposition, 1.5f);
+        colliders = Physics2D.OverlapCircleAll(spawnposition, 1.2f);
         if (colliders.Length > 0)
         {
             return false;
